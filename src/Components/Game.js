@@ -10,8 +10,8 @@ import Hangman from "./Hangman";
 let randomWords = require("random-words");
 
 export default function Game() {
-  let [won, setWon] = useState(0);
-  let [lost, setLost] = useState(0);
+  let [won, setWon] = useState(false);
+  let [lost, setLost] = useState(false);
   // let [randomWord, setRandomWord] = useState([randomWords(1)]);
   let [randomWord, setRandomWord] = useState("");
   let [buildWord, setBuildWord] = useState(""); //THIS WILL BE THE WORD BEING REVEALED LETTER BY LETTET AS THE USES MAKES CORRECT LETTER CHOICES
@@ -115,8 +115,14 @@ export default function Game() {
           return previous + 1;
         });
 
-        //RESET THE GAME BY REFRESHING THE BROWSER
-        window.location.reload();
+        setWon((previous) => {
+          return !previous;
+        });
+
+        setTimeout(() => {
+          //RESET THE GAME BY REFRESHING THE BROWSER
+          window.location.reload();
+        }, 2000);
       }
     } else {
       e.currentTarget.style.backgroundColor = "red";
@@ -125,6 +131,8 @@ export default function Game() {
       setIncorrectGuess((previous) => {
         return previous + 1;
       });
+
+      //CHECK IF MAX LIMIT OF GUESSES HAS BEEN REACHED
       if (incorrectGuess >= 10) {
         //ADD 1 TO GAMES PLAYED
         setTotalPlayed((previous) => {
@@ -132,23 +140,28 @@ export default function Game() {
           return previous + 1;
         });
 
-        setIncorrectGuess(0);
+        setLost((previous) => {
+          return !previous;
+        });
 
         //RESET THE GAME BY REFRESHING THE BROWSER
-        window.location.reload();
+        setTimeout(() => {
+          setIncorrectGuess(0);
+          window.location.reload();
+        }, 2000);
       }
     }
   }
 
   return (
     <>
-      <div className="ui-grid">
+      <div className="ui-grid ui-flex">
         <Hangman incorrectGuess={incorrectGuess} />
         <div className="game">
           {/* SCOREBOARD */}
           <Scoreboard score={score} won={gamesWon} totalPlayed={totalPlayed} />
           {/* WORD */}
-          <Word randomWord={buildWord} />
+          <Word randomWord={buildWord} won={won} lost={lost} />
           {/* KEYOBARD */}
           <Keyboard clickHandler={clickHandler} />
           {/* HANGMAN */}

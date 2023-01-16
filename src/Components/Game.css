@@ -15,3 +15,8 @@
   grid-auto-rows: auto;
   height: 100vh;
 }
+
+/* .ui-flex {
+  display: flex;
+  justify-content: space-evenly;
+} */
