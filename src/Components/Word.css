@@ -1,0 +1,7 @@
+.word {
+  font-weight: 700;
+  font-size: x-large;
+
+  color: white;
+  text-transform: uppercase;
+}

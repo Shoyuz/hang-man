@@ -1,0 +1,10 @@
+.score {
+  font-weight: 800;
+  font-size: x-large;
+  color: white;
+  text-transform: uppercase;
+}
+
+.right {
+  color: green;
+}

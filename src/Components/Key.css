@@ -1,0 +1,12 @@
+.key {
+  background-color: #3498db;
+  color: white;
+  font-weight: 700;
+  border-radius: 50%;
+  padding: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  /* align-self: center; */
+  /* justify-self: center; */
+}

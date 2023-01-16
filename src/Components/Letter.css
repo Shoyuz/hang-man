@@ -1,0 +1,7 @@
+.letter {
+  font-weight: 700;
+  font-size: x-large;
+  margin: 5px;
+  color: white;
+  text-transform: uppercase;
+}

@@ -1,0 +1,17 @@
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width: calc(100% - 73px); */
+  /* margin: 0 auto; */
+  /* height: calc(100% - 84px); */
+  /* height: 60vh; */
+  align-self: center;
+}
+
+.ui-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: auto;
+  height: 100vh;
+}
