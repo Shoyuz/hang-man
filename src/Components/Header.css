@@ -25,17 +25,20 @@
   padding: 10px;
   border: 2px solid white;
   border-radius: 5px;
-  height: 80vh;
-  width: 85vw;
+  height: 90vh;
+  width: 90vw;
   display: none;
 }
 
+/* REACT X ICON */
+/* ADDITIONAL INLINE STYLE HAS ALSO BEEN APPLIED TO THE ELEMENT WERE THE POINTEREVENTS HAVE BEEN SET TO NONE */
 .menu-close {
   background-color: red;
   border-radius: 50%;
   font-size: 1.5rem;
 }
 
-.menu-close:hover {
+/* SPAN ELEMENT WRAPPING THE REACT X ICON */
+#menu-close:hover {
   cursor: pointer;
 }

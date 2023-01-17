@@ -6,9 +6,19 @@ import Keyboard from "./Keyboard";
 import "./Game.css";
 import Hangman from "./Hangman";
 import Header from "./Header";
-
 //NOTE TO MYSELF - ANY VARIABLE DECLARATIONS MUST BE BELOW ANY IMPORT STATEMENTS!
+
+//RANDOM WORDS IN THIS APP ARE GENERATED USING THIS FREE NPM LIBRARY CALLED random-words
+//https://www.npmjs.com/package/random-words
+//https://github.com/apostrophecms/random-words/blob/main/LICENSE
 let randomWords = require("random-words");
+
+//I COULD HAVE ALTERNATIVELY ALSO IMPLEMENTED THE RANDOM WORD FUNCTIONALITY BY CREATING AN ARRAY CALLED DICTIONARY CONTAINING THE WORDS
+//AND TO GENERATE A RANDOM WORD I WOULD HAVE USED THE BELOW FUNCTION TO GENERATE THE RANDOM WORD
+/* function getRandomWord(max,dictionary) {
+  //max - length of the array i.e pass dictionary.length as argument for max
+  return dictionary[Math.floor(Math.random() * max)];
+} */
 
 export default function Game() {
   let [won, setWon] = useState(false);
@@ -44,18 +54,9 @@ export default function Game() {
     setGamesWon(Number(JSON.parse(sessionStorage.getItem("gamesWon"))));
 
     setRandomWord(getRandomWord());
-    console.log("In useffect1");
-    // let word = getRandomWord();
-    // let tempWord = [...word.split("")].join(" ");
-    // console.log(word);
-    // setRandomWord(word);
-    // setBuildWord(tempWord.replaceAll(/[a-zA-Z]/g, "_"));
-    // console.log(randomWord);
-    // console.log(buildWord);
   }, []);
 
   useEffect(() => {
-    console.log("In useffect2");
     //MAP THROUGH THE WORD AND FOR EACH LETTER AND DISPLAY A PLACEHOLDER UNDERSCORE CONTAINER FOR EACH LETTER
     //STORE THE RESULTS IN A NEW VARIABLE RATHER THAN WORK ON THE ORIGINAL WORD AS LATER ON WHEN REPLACE FUNCTIION IS USED ON THE STRING
     //WE WILL NEED TO PRESERVE THE ORIGINAL WORD FROM BEING CHANGED
@@ -64,8 +65,6 @@ export default function Game() {
     });
 
     setBuildWord(tempWord.join(""));
-
-    console.log("Random Word:" + randomWord);
   }, [randomWord]);
 
   //KEYOBOARD KEYS CLICK HANDLER
@@ -95,7 +94,7 @@ export default function Game() {
       e.currentTarget.style.pointerEvents = "none";
 
       //GAME WON CONDITION CHECK
-      if (tempWord.join("").toLowerCase() == randomWord) {
+      if (tempWord.join("").toLowerCase() === randomWord) {
         //ADD 5 TO SCORE FOR EACH WIN
         setScore((previous) => {
           sessionStorage.setItem("score", JSON.stringify(previous + 5));
@@ -114,6 +113,7 @@ export default function Game() {
           return previous + 1;
         });
 
+        //SET WON STATE VARIABLE TO TRUE TO SIGNAL THE GAME HAS BEEN WON
         setWon((previous) => {
           return !previous;
         });
@@ -139,6 +139,7 @@ export default function Game() {
           return previous + 1;
         });
 
+        //SET LOST VARIABLE TO TRUE SIGNALLING GAME IS LOST
         setLost((previous) => {
           return !previous;
         });
@@ -155,7 +156,9 @@ export default function Game() {
   return (
     <>
       <div className="ui-grid">
+        {/* HEADER */}
         <Header />
+        {/* HANGMAN DRAWING BOARD */}
         <Hangman incorrectGuess={incorrectGuess} />
         <div className="game-board">
           {/* SCOREBOARD */}

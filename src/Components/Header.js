@@ -5,7 +5,8 @@ import { AiOutlineClose } from "react-icons/ai";
 export default function Header() {
   function handleClick(e) {
     //HIDE THE HELP BOX WHEN USER CLICKS THE X SVG ICON
-    if (e.target.nodeName === "svg") {
+    console.log(e);
+    if (e.target.id === "menu-close") {
       e.currentTarget.style.display = "none";
     }
     //DISPLAY THE HELP BOX WHEN USER CLICKS THE HELP MENU
@@ -27,7 +28,9 @@ export default function Header() {
       </span>
 
       <div onClick={handleClick} className="help-box">
-        <AiOutlineClose className="menu-close" />
+        <span id="menu-close">
+          <AiOutlineClose className="menu-close" pointerEvents="none" />
+        </span>
         <h1>Game Rules:</h1>
         <ul>
           <li>Click on any letter to start guessing the word</li>
@@ -47,7 +50,7 @@ export default function Header() {
             for that round and the next word will appear
           </li>
           <li>
-            You will not receive any points if your hangman if fully drawn and
+            You will not receive any points if your hangman is fully drawn and
             you still have missing letters in the word
           </li>
           <li>If you skip/reset a word you will not get any points</li>

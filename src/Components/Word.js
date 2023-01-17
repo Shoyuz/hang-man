@@ -9,8 +9,8 @@ export default function Word({ randomWord, won, lost }) {
     <div>
       <div className="word">
         {randomWord !== "" &&
-          randomWord.split("").map((letter) => {
-            return <Letter letter={letter} />;
+          randomWord.split("").map((letter, index) => {
+            return <Letter key={index} letter={letter} />;
           })}
       </div>
       {lost && (
