@@ -1,0 +1,41 @@
+.header {
+  grid-area: header;
+  align-self: center;
+  position: relative;
+}
+
+.menu-button {
+  border: 3px solid grey;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.menu-button:hover {
+  cursor: pointer;
+  background-color: rgb(73, 72, 72);
+}
+
+.help-box {
+  position: absolute;
+  top: 100%;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 5px;
+  height: 80vh;
+  width: 85vw;
+  display: none;
+}
+
+.menu-close {
+  background-color: red;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.menu-close:hover {
+  cursor: pointer;
+}

@@ -14,17 +14,17 @@ export default function Word({ randomWord, won, lost }) {
           })}
       </div>
       {lost && (
-        <div style={{ color: "red", fontWeight: "600" }}>
+        <div className="lost-message">
           Oooops. Sorry you lost!
           <br />
-          <span className="loading-new-word">loading new word...</span>
+          <span className="loading-new-word">loading next word...</span>
         </div>
       )}
       {won && (
-        <div style={{ color: "green", fontWeight: "600" }}>
-          Hurray!! You won!!
+        <div className="win-message">
+          HURRRRRAYYYY!! YOU GOT IT!!
           <br />
-          <span className="loading-new-word">loading new word...</span>
+          <span className="loading-new-word">loading next word...</span>
         </div>
       )}
     </div>

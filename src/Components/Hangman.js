@@ -14,8 +14,6 @@ import state10 from "../images/state10.GIF";
 import state11 from "../images/state11.GIF";
 
 export default function Hangman({ incorrectGuess }) {
-  let state = "state";
-
   return (
     <div className="hangman-image">
       {incorrectGuess === 1 && <img src={state1} />}

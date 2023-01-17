@@ -9,4 +9,9 @@
   text-align: center;
   /* align-self: center; */
   /* justify-self: center; */
+  transition: transform 0.5s ease-in-out;
+}
+
+.key:hover {
+  transform: scale(0.9);
 }

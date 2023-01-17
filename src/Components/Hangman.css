@@ -1,9 +1,20 @@
 .hangman-image {
   align-self: center;
   justify-self: center;
+  grid-area: hangmanImage;
 }
 
 .hangman-image img {
   border-radius: 5px;
-  /* height: 60vh; */
+  animation: fly-in 0.7s ease-in;
+  height: 60vh;
+}
+
+@keyframes fly-in {
+  0% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
 }

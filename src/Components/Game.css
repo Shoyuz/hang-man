@@ -1,4 +1,14 @@
-.game {
+.ui-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 50px 1fr;
+  height: 100vh;
+  grid-template-areas:
+    "header header"
+    "hangmanImage board";
+}
+
+.game-board {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -7,13 +17,7 @@
   /* height: calc(100% - 84px); */
   /* height: 60vh; */
   align-self: center;
-}
-
-.ui-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-auto-rows: auto;
-  height: 100vh;
+  grid-area: board;
 }
 
 /* .ui-flex {

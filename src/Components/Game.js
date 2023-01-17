@@ -5,6 +5,7 @@ import Word from "./Word";
 import Keyboard from "./Keyboard";
 import "./Game.css";
 import Hangman from "./Hangman";
+import Header from "./Header";
 
 //NOTE TO MYSELF - ANY VARIABLE DECLARATIONS MUST BE BELOW ANY IMPORT STATEMENTS!
 let randomWords = require("random-words");
@@ -12,10 +13,8 @@ let randomWords = require("random-words");
 export default function Game() {
   let [won, setWon] = useState(false);
   let [lost, setLost] = useState(false);
-  // let [randomWord, setRandomWord] = useState([randomWords(1)]);
   let [randomWord, setRandomWord] = useState("");
   let [buildWord, setBuildWord] = useState(""); //THIS WILL BE THE WORD BEING REVEALED LETTER BY LETTET AS THE USES MAKES CORRECT LETTER CHOICES
-  let [hangMan, setHangman] = useState(1);
   let [incorrectGuess, setIncorrectGuess] = useState(1);
   let [score, setScore] = useState("");
   let [totalPlayed, setTotalPlayed] = useState("");
@@ -122,7 +121,7 @@ export default function Game() {
         setTimeout(() => {
           //RESET THE GAME BY REFRESHING THE BROWSER
           window.location.reload();
-        }, 2000);
+        }, 3000);
       }
     } else {
       e.currentTarget.style.backgroundColor = "red";
@@ -148,16 +147,17 @@ export default function Game() {
         setTimeout(() => {
           setIncorrectGuess(0);
           window.location.reload();
-        }, 2000);
+        }, 3000);
       }
     }
   }
 
   return (
     <>
-      <div className="ui-grid ui-flex">
+      <div className="ui-grid">
+        <Header />
         <Hangman incorrectGuess={incorrectGuess} />
-        <div className="game">
+        <div className="game-board">
           {/* SCOREBOARD */}
           <Scoreboard score={score} won={gamesWon} totalPlayed={totalPlayed} />
           {/* WORD */}
