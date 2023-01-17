@@ -4,30 +4,36 @@ import { AiOutlineClose } from "react-icons/ai";
 
 export default function Header() {
   function handleClick(e) {
-    //HIDE THE HELP BOX WHEN USER CLICKS THE X SVG ICON
-    console.log(e);
-    if (e.target.id === "menu-close") {
-      e.currentTarget.style.display = "none";
-    }
     //DISPLAY THE HELP BOX WHEN USER CLICKS THE HELP MENU
     if (e.target.id === "help-button") {
-      e.target.nextSibling.style.display = "block";
+      //THE PARENT ELEMENT OF HELP MENU BUTTON IS THE HEADER DIV.THE HELP BOX TO DISPLAY IS THE LAST CHILD OF THIS PARENT HEADER DIV
+      e.target.parentElement.lastChild.style.display = "block";
     }
+
+    //HIDE THE HELP BOX WHEN USER CLICKS THE X SVG ICON
+    if (e.target.id === "menu-close") {
+      //THE CLOSE BUTTON IS INSIDE THE HELP BOX WHICH MAKES IT THE PARENT, CLICKING IT WILL SET THE PARENT DISPLAY TO NONE
+      //WHICH MAKES THE MESSAGE BOX DISAPPEAR
+      e.target.parentElement.style.display = "none";
+    }
+
     //REFRESH THE BROWSER IF THE USER CLICKS ON SKIP/RESTART BUTTON
     if (e.target.id === "skip-restart") {
       window.location.reload();
     }
   }
+
   return (
-    <div className="header">
-      <span id="skip-restart" onClick={handleClick} className="menu-button">
+    // THE PARENT HEADER DIV HANDLING ALL THE CLICK EVENTS
+    <div id="header" onClick={handleClick} className="header">
+      <span id="skip-restart" className="menu-button">
         Skip Word/Restart
       </span>
-      <span id="help-button" onClick={handleClick} className="menu-button">
+      <span id="help-button" className="menu-button">
         Help Menu
       </span>
 
-      <div onClick={handleClick} className="help-box">
+      <div className="help-box">
         <span id="menu-close">
           <AiOutlineClose className="menu-close" pointerEvents="none" />
         </span>

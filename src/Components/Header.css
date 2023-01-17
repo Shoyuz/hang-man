@@ -39,6 +39,11 @@
 }
 
 /* SPAN ELEMENT WRAPPING THE REACT X ICON */
+#menu-close {
+  /* DISPLAYING AS INLINE FLEX TO FIT THE X ICON PERFECTLY WITHIN ITS SPAN WRAPPER */
+  display: inline-flex;
+  font-size: 1.5rem;
+}
 #menu-close:hover {
   cursor: pointer;
 }
