@@ -41,7 +41,8 @@ You can clone the repository and make a copy of it in your local machine (below 
             You will not receive any points if your hangman is fully drawn and
             you still have missing letters in the word
           </li>
-          <li>If you skip/reset a word you will not get any points</li></ul>
+          <li>If you skip/reset a word you will not get any points</li>
+</ul>
 
 ### Credits
 Credit to my wife and kids for all their input and suggestions on the looks of the UI as well as testing the game.
