@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# HANGMAN GAME CREATED WITH JAVASCRIPT AND REACT.JS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
+* Description of the project
+* Purpose of the project
+* Installation Instructions
+* Rules of the game
+* Credit
 
-## Available Scripts
+## Project Description
+A working version of a simple hangman game. 
 
-In the project directory, you can run:
+## Purpose of the project
+This game was created in response to the final capstone project of the Hyperiondev Web development bootcamp where the requirement was to build from scratch a fully working hangman game. I enjoyed working on this project a lot and so did my wife and kids who were super excited all along the development process and everytime i implemented a new feature and improved the UI!
 
-### `npm start`
+## Installation Instructions
+You can clone the repository and make a copy of it in your local machine (below are the steps to clone the repository). You will need node to install the game dependancies and then run it using the <b>npm start</b> script step on the command terminal of your IDE to launch the game in your browser.
+![git_repo_cloning_instructions1](https://user-images.githubusercontent.com/39889312/210662055-e0033c33-6c11-4509-b2be-8ada880c6597.png)
+![git_repo_cloning_instructions2](https://user-images.githubusercontent.com/39889312/210662113-006e8dad-11b6-4abc-9dec-8ae15298db56.png)
+![git_repo_cloning_instructions3](https://user-images.githubusercontent.com/39889312/210662148-c42dd86a-59e6-4d3c-873b-1d204c7a6bac.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Rules of the game:
+<ul>
+          <li>Click on any letter to start guessing the word</li>
+          <li>A right guess will unveal a letter(s) </li>
+          <li>
+            If you manage to guess the word correctly you will receive 5 points
+            upon the revelation of the last letter and the game will continue
+            with the next word
+          </li>
+          <li>A wrong guess will start the hanging process</li>
+          <li>
+            With each wrong guess a part of the hangman will be drawn to the
+            drawing board on the left
+          </li>
+          <li>
+            When the hangman is fully drawn you will no loger be able to guess
+            for that round and the next word will appear
+          </li>
+          <li>
+            You will not receive any points if your hangman is fully drawn and
+            you still have missing letters in the word
+          </li>
+          <li>If you skip/reset a word you will not get any points</li></ul>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Credits
+Credit to my wife and kids for all their input and suggestions on the looks of the UI as well as testing the game.
