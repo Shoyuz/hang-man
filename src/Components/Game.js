@@ -164,7 +164,12 @@ export default function Game() {
           {/* SCOREBOARD */}
           <Scoreboard score={score} won={gamesWon} totalPlayed={totalPlayed} />
           {/* WORD */}
-          <Word randomWord={buildWord} won={won} lost={lost} />
+          <Word
+            randomWord={buildWord}
+            won={won}
+            lost={lost}
+            wordCopy={randomWord}
+          />
           {/* KEYOBARD */}
           <Keyboard clickHandler={clickHandler} />
           {/* HANGMAN */}

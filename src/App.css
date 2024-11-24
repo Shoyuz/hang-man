@@ -7,7 +7,11 @@
 }
 body {
   /* background-color: rgb(91, 37, 161); */
-  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 1), yellow);
+  background-image: linear-gradient(
+    to bottom,
+    rgb(255, 0, 221),
+    rgb(0, 255, 55)
+  );
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
     "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

@@ -18,3 +18,11 @@
     transform: scale(1);
   }
 }
+
+@media screen and (max-width: 900px) {
+  .hangman-image img {
+    border-radius: 5px;
+    animation: pulse 0.7s ease-in-out;
+    height: 40vh;
+  }
+}

@@ -1,16 +1,27 @@
 .keyBoard {
-  /* display: flex;
-  gap: 2px;
-  flex-flow: row wrap; */
-
   display: grid;
   grid-template-columns: repeat(6, 80px);
-
-  /* width: 400px;
-  height: 400px; */
-  /* margin-right: auto;
-  margin-left: auto; */
   justify-content: center;
   padding: 10px;
   margin: 20px;
+}
+
+@media screen and (max-width: 780px) {
+  .keyBoard {
+    display: grid;
+    grid-template-columns: repeat(6, 65px);
+    justify-content: center;
+    padding: 5px;
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .keyBoard {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    justify-content: center;
+    padding: 5px;
+    margin: 5px;
+  }
 }

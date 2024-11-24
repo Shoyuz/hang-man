@@ -5,7 +5,6 @@
 }
 
 .menu-button {
-  border: 3px solid grey;
   background-color: #333;
   color: white;
   padding: 5px;
@@ -13,8 +12,9 @@
 }
 
 .menu-button:hover {
+  border: 3px solid grey;
   cursor: pointer;
-  background-color: rgb(73, 72, 72);
+  /* background-color: rgb(73, 72, 72); */
 }
 
 .help-box {
